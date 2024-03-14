@@ -1,15 +1,24 @@
 {
   "name": "simpletsenvironment",
   "version": "1.0.0",
+  "type": "module",
   "description": "Simple node.js environment with SCSS and TS compile tasks",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "concurrently \"npm run serve\" \"npm run watch:all\"",
+    "build": "npm run build:ts && npm run build:scss",
+    "build:ts": "tsc",
+    "build:scss": "sass src/scss/style.scss dist/css/style.css",
+    "serve": "lite-server --baseDir dist",
+    "watch:all": "concurrently \"npm run watch:scss\" \"npm run watch:ts\"",
+    "watch:scss": "sass src/scss/style.scss dist/css/style.css --watch",
+    "watch:ts": "tsc -w"
   },
   "author": "Rafael Teruyuki Yamaguchi",
   "license": "ISC",
   "devDependencies": {
     "concurrently": "^8.2.2",
-    "nodemon": "^3.1.0",
+    "http-server": "^14.1.1",
+    "lite-server": "^2.6.1",
     "sass": "^1.72.0",
     "typescript": "^5.4.2"
   }
