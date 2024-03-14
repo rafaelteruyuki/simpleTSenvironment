@@ -1,0 +1,16 @@
+{
+  "name": "simpletsenvironment",
+  "version": "1.0.0",
+  "description": "Simple node.js environment with SCSS and TS compile tasks",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Rafael Teruyuki Yamaguchi",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "nodemon": "^3.1.0",
+    "sass": "^1.72.0",
+    "typescript": "^5.4.2"
+  }
+}
